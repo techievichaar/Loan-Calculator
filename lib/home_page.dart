@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -28,8 +28,6 @@ class _HomePageState extends State<HomePage> {
     double emi =
         (amount * rate * pow(1 + rate, tenure)) / (pow(1 + rate, tenure) - 1);
     double totalAmount = emi * tenure;
-
-    double interest = repaymentAmount - double.parse(amountController.text);
 
     setState(() {
       repaymentAmount = totalAmount;
